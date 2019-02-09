@@ -15,12 +15,11 @@ function getUrlVars() {
     });
     return vars;
 }
-function sendCall() { 
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', getUrlVars()["tid"].replace("<","\\<").replace(">","\\>");
-}
+  var tid = getUrlVars()["tid"].replace("<","\\<");
+  gtag('config', tid.replace(">","\\>"));
 </script>
 <p>Welcome! Please come back later!</p>
 </body>
