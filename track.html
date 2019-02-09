@@ -18,8 +18,8 @@ function getUrlVars() {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  var tid = getUrlVars()["tid"].replace("<","\\<");
-  gtag('config', tid.replace(">","\\>"));
+  var tid = getUrlVars()["tid"];
+  gtag('config', encodeURIComponent(tid));
 </script>
 <p>Welcome! Please come back later!</p>
 </body>
