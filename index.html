@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>TypoTrack</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="stylesheet.css" rel="stylesheet">
+<style>
+     body {
+	padding-top: 0px; 
+	padding-bottom: 45px;
+      }
+    .form-signin {
+    	padding: 0px;
+        max-width: 400px;
+     }
+    .explanation {
+        text-align: left;
+	font-size: 15px;
+	color: #343a40;
+	padding: 5px 15px 15px 15px;
+     }
+     h1 {
+	font-size: 50px;
+	margin-bottom:10px;
+	color: purple;
+     }
+    </style>
+  </head>
+
+  <body id="body" class="text-center">
+  <script>
+  function CheckIsValidDomain(domain) { 
+    var re = new RegExp(/^(UA)-[1234567890]+-[1234567890]+$/); 
+    return domain.match(re);
+} 
+function setLink() {
+var domain = document.getElementById("inputDomain").value;
+document.getElementById("generatedLink").value = "https://datapools.github.io/TypoTrack/track?tid="+domain;
+}
+function validateInput() {
+var domain = document.getElementById("inputDomain").value;
+if(CheckIsValidDomain(domain)) {
+document.getElementById("errorCode").innerHTML = "Link Generated";
+document.getElementById("errorCode").style.visibility='visible';
+document.getElementById("errorCode").style.color = '#007bff';
+setLink();
+}
+else {
+document.getElementById("errorCode").innerHTML = "Invalid tracking ID";
+document.getElementById("errorCode").style.visibility='visible';
+document.getElementById("errorCode").style.color = 'red';
+document.getElementById("generatedLink").value = "";
+}
+}
+</script>
+    <form class="form-signin">
+      <h1 class="text-primary">TypoTrack</h1>
+      <h1 class="h5 mb-3 font-weight-normal">Generate Domain Tracking Link</h1>
+      <input type="email" id="inputDomain" oninput="validateInput()" class="form-control" placeholder="Google Analytics TID (UA-XXXXX-Y)" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="text" id="generatedLink" class="form-control" placeholder="Link appears here" readonly>
+      <p id="errorCode" style="color: blue; visibility:hidden; font-size: 12px; padding-top: 10px;">H</p>
+	<div class="explanation">
+	<h6>What is this?</h6>
+	<p>If you have a domain that you just registered and want to measure if it currently has any traffic (maybe from a previous owner) you can use this.</p>
+	<p>Just grab your Google Analytics Tracking ID from the Analytics console and put it in the box above.</p>
+	<p>Redirect your domain to the generated link, and Google Analytics should start recording any traffic.</p>
+</div>
+    </form>
+  </body>
+</html>
+

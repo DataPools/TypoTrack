@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome!</title>
+</head>
+<body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js"></script>
+<script>
+function getUrlVars() {
+    //Hey! I copy code and so do you. Don't judge me.
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+function sendCall() { 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', getUrlVars()["tid"].replace("<","\\<").replace(">","\\>";
+}
+</script>
+<p>Welcome! Please come back later!</p>
+</body>
+</html>
