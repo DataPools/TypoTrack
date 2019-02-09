@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -34,6 +33,20 @@
 	margin-bottom:10px;
 	color: purple;
      }
+     .footer {
+	background-color: #dcdcdc;
+	height: 7vh;
+	position: fixed;
+	bottom: 0px;
+	margin: 0 auto;
+	padding-top: 2.5vh;
+	min-width: 100%;
+	font-size: 13px;   
+	
+     }
+     a {
+	color: #343a40; 
+     }
     </style>
   </head>
 
@@ -45,7 +58,7 @@
 } 
 function setLink() {
 var domain = document.getElementById("inputDomain").value;
-document.getElementById("generatedLink").value = "https://datapools.github.io/typotrack/track?tid="+domain;
+document.getElementById("generatedLink").value = "https://datapools.github.io/TypoTrack/track?tid="+domain;
 }
 function validateInput() {
 var domain = document.getElementById("inputDomain").value;
@@ -77,6 +90,6 @@ document.getElementById("generatedLink").value = "";
 	<p>Redirect your domain to the generated link, and Google Analytics should start recording any traffic.</p>
 </div>
     </form>
+<footer class="footer"><a href="https://github.com/DataPools/typotrack">A Project by DataPools</a></footer>
   </body>
 </html>
-
